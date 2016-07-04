@@ -1,4 +1,4 @@
-#Frogger Arcade Game
+#Frogger Game
 ===============================
 
 
