@@ -15,13 +15,6 @@
           The enemies move in varying speeds on the paved block portion of the scene. Once a the player collides with an enemy, the game is reset and the player moves back to the start square.
           Once the player reaches the water the game is won.\r\n\r\n
 
-          ### Characters: \r\n!
-               [alt text](https://github.com/udacity/frontend-nanodegree-arcade-game/blob/master/images/char-boy.png "Logo char-boy")
-               ![alt text](https://github.com/udacity/frontend-nanodegree-arcade-game/blob/master/images/char-cat-girl.png "Logo char-cat-girl")
-               ![alt text](https://github.com/udacity/frontend-nanodegree-arcade-game/blob/master/images/char-horn-girl.png "Logo char-horn-girl")
-               ![alt text](https://github.com/udacity/frontend-nanodegree-arcade-game/blob/master/images/char-pink-girl.png "Logo char-cat-girl")
-               ![alt text](https://github.com/udacity/frontend-nanodegree-arcade-game/blob/master/images/char-princess-girl.png "Logo char-princess-girl").\r\n\r\n
-
           ### Support or Contact\r\nHaving trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
