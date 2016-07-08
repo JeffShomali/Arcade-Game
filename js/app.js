@@ -17,6 +17,7 @@ var XandY = {
      Setting the Enemy initial location (you need to implement)
      Setting the Enemy speed (you need to implement)
 */
+
 var Enemy = function(positionY, speed) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
