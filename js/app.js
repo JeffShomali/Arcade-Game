@@ -1,11 +1,23 @@
 
-// generate array of enemies
+
+/**
+ * [generate array of enemies]
+ * @type {Array}
+ */
 var allEnemies = [];
 
-// Array of Gems
+
+/**
+ * [Array of Gems]
+ * @type {Array}
+ */
 var allGems = [];
 
 // Array of randome X and Y location for using lather
+/**
+ * [XandY description]
+ * @type {Object}
+ */
 var XandY = {
     X: [0, 100, 200, 300, 400, 500, 600],
     Y: [170, 220, 350, 380],
@@ -17,6 +29,12 @@ var XandY = {
      Setting the Enemy initial location (you need to implement)
      Setting the Enemy speed (you need to implement)
 */
+/**
+ * [function description]
+ * @param  {[type]} positionY [description]
+ * @param  {[type]} speed     [description]
+ * @return {[type]}           [description]
+ */
 var Enemy = function(positionY, speed) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -35,6 +53,11 @@ var Enemy = function(positionY, speed) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+/**
+ * [function description]
+ * @param  {[type]} dt [description]
+ * @return {[type]}    [description]
+ */
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -46,17 +69,30 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Generate enemies class,
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 var Enemies = function() {
     //array for holding pushed enemies
     this.randomEnemy = [];
 };
 
 //This function generates number of enemies passed
+/**
+ * [function description]
+ * @param  {[type]} _number [description]
+ * @return {[type]}         [description]
+ */
 Enemies.prototype.generate = function(_number) {
     for (var i = 0; i < _number; i++) {
         var speed = randomNumber(50, 500);
@@ -68,6 +104,10 @@ Enemies.prototype.generate = function(_number) {
 };
 
 // clear all enemies from the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Enemies.prototype.reset = function() {
     var enemyCount = allEnemies.length;
     for (i = 0; i < enemyCount; i++) {
@@ -77,10 +117,20 @@ Enemies.prototype.reset = function() {
 
 
 //instantiate a new Enemies object and call it enemiesObj
+/**
+ * [Enemies description]
+ */
 var enemiesObj = new Enemies();
 
 
 // Gem class is generating gem, have two argument  x and y for positioning
+
+/**
+ * [function description]
+ * @param  {[type]} _X [description]
+ * @param  {[type]} _Y [description]
+ * @return {[type]}    [description]
+ */
 var Gem = function(_X, _Y) {
     var gemArray = ['gem-green.png', 'gem-orange.png', 'gem-blue.png'];
     this.sprite = 'images/' + gemArray[randomNumber(0, 2)];
@@ -94,21 +144,34 @@ var Gem = function(_X, _Y) {
 
     // Set the original position of the Gem
     // This does not change throughout one game
+
     this.ox = _X;
     this.oy = _Y;
 };
 
 //This function is displaying gem on the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Gem.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 //This is for hiding gem whenever reset the game
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Gem.prototype.hide = function() {
     this.x = -100;
 };
 
 //This is for resteting location of gem on the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Gem.prototype.reset = function() {
     // gem = new Gem();
     this.x = this.ox;
@@ -117,14 +180,26 @@ Gem.prototype.reset = function() {
 
 
 // Instantiate a new gem object
+/**
+ * [Gem description]
+ */
 var gem = new Gem();
 
 // This is for holding all generated gems
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 var Gems = function() {
     this.gemsArray = [];
 };
 
 // This is for generating gems
+/**
+ * [function description]
+ * @param  {[type]} _int [description]
+ * @return {[type]}      [description]
+ */
 Gems.prototype.generate = function(_int) {
     for (var i = 0; i < _int; i++) {
         var x = randomNumber(0, 6);
@@ -137,6 +212,10 @@ Gems.prototype.generate = function(_int) {
 
 
 // This is for clearing gems from he canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Gems.prototype.reset = function() {
     var length = allGems.length;
     for (var i = 0; i < length; i++) {
@@ -145,11 +224,18 @@ Gems.prototype.reset = function() {
 };
 
 // instantiate a new Gems object
+/**
+ * [Gems description]
+ */
 var gems = new Gems();
 
 
 // Declaring Player class
 // this class is for dislaying player on the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 var Player = function() {
     this.sprite = 'images/char-boy.png';
     this.x = 300;
@@ -165,24 +251,42 @@ var Player = function() {
 // a handleInput() method.
 
 // This if for update player position on the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Player.prototype.update = function() {
     this.currentX = this.x;
     this.currentY = this.y;
 };
 
 // This is for reset player position on the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Player.prototype.reset = function() {
     this.x = 300;
     this.y = 470;
 };
 
 // This is caleed whenever collision occure
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Player.prototype.resetPosition = function() {
     this.x = 300;
     this.y = 470;
 };
 
 // This is for updating player lives
+/**
+ * [function description]
+ * @param  {[type]} action [description]
+ * @param  {[type]} _val   [description]
+ * @return {[type]}        [description]
+ */
 Player.prototype.updateLives = function(action, _val) {
     if (action === "add") {
         this.lives = this.lives + _val;
@@ -194,11 +298,20 @@ Player.prototype.updateLives = function(action, _val) {
 };
 
 // This is for displaying player on the canvas
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // This is for handeling keyboard
+/**
+ * [function description]
+ * @param  {[type]} key [description]
+ * @return {[type]}     [description]
+ */
 Player.prototype.handleInput = function(key) {
     if (key === 'left' && this.x !== 0) {
         this.x = this.currentX + -50;
@@ -215,9 +328,16 @@ Player.prototype.handleInput = function(key) {
 };
 
 // instantiate new player object
+/**
+ * [Player description]
+ */
 var player = new Player();
 
 // Level class is for update level and reset levels player passed
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 var Level = function() {
     this.level = 1;
     enemiesObj.generate(2);
@@ -225,6 +345,10 @@ var Level = function() {
 };
 
 // This is for updating level
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Level.prototype.update = function() {
     this.level++;
 
@@ -239,6 +363,10 @@ Level.prototype.update = function() {
 };
 
 // This is for reseting level
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 Level.prototype.reset = function() {
     this.level = 1;
     player.reset();
@@ -251,11 +379,18 @@ Level.prototype.reset = function() {
 };
 
 // instantiate a new object of Level
+/**
+ * [Level description]
+ */
 var level = new Level();
 
 // This clas is for tracking all information about player status
 // like level, numberOfGems, lives ...
 // it could be helpful for future uses
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 var PlayerStatus = function() {
     this.record = 0;
     this.numberOfGems = 0;
@@ -263,40 +398,70 @@ var PlayerStatus = function() {
 
 
 // This is for updating level
+/**
+ * [function description]
+ * @param  {[type]} _level [description]
+ * @return {[type]}        [description]
+ */
 PlayerStatus.prototype.updateLevel = function(_level) {
     this.currentLevel = _level;
 };
 
 // This is for updating record
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 PlayerStatus.prototype.updateRecord = function() {
     this.record = this.record + 100;
 };
 
 
 // This is for updating  lives
+/**
+ * [function description]
+ * @param  {[type]} _live [description]
+ * @return {[type]}       [description]
+ */
 PlayerStatus.prototype.updateLives = function(_live) {
     this.currentLives = _live;
 };
 
 // This is for updating reached gems and records
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 PlayerStatus.prototype.updateGems = function() {
     this.numberOfGems++;
     this.record = this.record + 300;
 };
 
 // This is for resetting
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
 PlayerStatus.prototype.reset = function() {
     this.numberOfGems = 0;
     this.record = 0;
 };
 
 // Instantiate a new PlayerStatus
+/**
+ * [PlayerStatus description]
+ */
 var gameStatus = new PlayerStatus();
 
 //http://stackoverflow.com/questions/5597060/detecting-arrow-key-presses-in-javascript
 // This listens for key presses and sends the keys
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
+/**
+ * [addEventListener description]
+ * @param {[type]} 'keydown'  [description]
+ * @param {[type]} function(e [description]
+ */
 document.addEventListener('keydown', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -304,11 +469,22 @@ document.addEventListener('keydown', function(e) {
         39: 'right',
         40: 'down'
     };
+    /**
+     * [handleInput description]
+     * @param  {[type]} allowedKeys[e.keyCode] [description]
+     * @return {[type]}                        [description]
+     */
     player.handleInput(allowedKeys[e.keyCode]);
 
 });
 
 // http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+/**
+ * [randomNumber description]
+ * @param  {[type]} min [description]
+ * @param  {[type]} max [description]
+ * @return {[type]}     [description]
+ */
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
