@@ -24,4 +24,8 @@ Move the player by pressing the arrows `Up`, `Down`, `Left` or `Right`.
 Avoid the bugs, collect the gems.
 
 ### Where to Play?
-Play the game: [Start!](https://jeffshomali.github.io/Arcade-Game/play.html).
+Play the game: [Start!](http://jeffshomali.com/Projects/P3/).
+
+### Screenshot
+
+![alt text](https://github.com/JeffShomali/P3-Arcade-Game/blob/gh-pages/images/P3.png?raw=true)
