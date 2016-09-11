@@ -1,6 +1,13 @@
 #  Arcade Game: Bugs!
+This is a basic game project, designed by Udacity Frontend Nanodegree. This game is designed to practice on Practice on JavaScript Object Oriented and HTML 5 Canves.
 
-## Welcome to Classic Arcade Game
+### Prerequisites Courses to Finish this Project
+1. Object Oriented JavaScript (UD015)
+     + Course built by [Hack Reactor](https://www.udacity.com/course/object-oriented-javascript--ud015)
+2. HTML5 Canvas (UD292)
+     + Course built by [Udacity](https://www.udacity.com/course/html5-canvas--ud292)
+
+### How to Play
 In this game you have a **Player**  and **Enemies (Bugs)**. The goal of the player is to reach the water, without colliding into any one of the enemies. The player can move left, right, up and down. The enemies move in varying speeds on the paved block portion of the scene. Once a the player collides with an enemy, the game is reset and the player moves back to the start square. Once the player reaches the water the game is won.
 
 
